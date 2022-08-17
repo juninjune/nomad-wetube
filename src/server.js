@@ -10,6 +10,9 @@ const app = express();
 const loggermiddleware = logger("dev");
 app.use(loggermiddleware);
 
+app.set("view engine", "pug");
+app.set("views", process.cwd() + "/src/views");
+
 app.use("/", globalRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);
